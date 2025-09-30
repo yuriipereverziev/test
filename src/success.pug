@@ -1,0 +1,9 @@
+extends templates/layout/layout.pug
+block head
+    -var title = LANG.success.success_title
+    title Naturallic - #{title}
+block content
+    include templates/mixins/menu
+    +menu("success")
+    include templates/success/header
+    include templates/success/reviews

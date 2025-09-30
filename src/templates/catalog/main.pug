@@ -1,0 +1,67 @@
+include ../mixins/product
+-
+	var CATALOG = LANG.catalog;
+	var PRODUCTS = LANG.hits
+
+	let healthProducts = PRODUCTS.filter(product => product.category === 'health')
+	let beautyProducts = PRODUCTS.filter(product => product.category === 'beauty')
+
+	if (LANG.locale === 'ee' || LANG.locale === 'lt' || LANG.locale === 'lv') {
+		healthProducts = healthProducts.filter(prod => prod.tag !== 'depanten')
+		beautyProducts = beautyProducts.filter(prod => prod.tag !== 'depanten')
+	}
+
+	if (LANG.locale === 'ee' || LANG.locale === 'lt' || LANG.locale === 'lv'
+		|| LANG.locale === 'pl' || LANG.locale === 'bg' || LANG.locale === 'it') {
+		healthProducts = healthProducts.filter(prod => prod.tag !== 'vermixin')
+		beautyProducts = beautyProducts.filter(prod => prod.tag !== 'vermixin')
+	};
+
+	const preloadedHealthProducts = healthProducts.filter((product, index) => index <= 8)
+	const restHealthProducts = healthProducts.filter((product, index) => index > 8)
+	const preloadedBeautyProducts = beautyProducts.filter((product, index) => index <= 8)
+	const restBeautyProducts = beautyProducts.filter((product, index) => index > 8)
+
+section.catalog-main
+	.container
+		h2.catalog-main__title.title!=CATALOG.catalog_title
+		.catalog-main__content
+			.catalog-main__left
+				p.category-item#health.js-tab.active!=CATALOG.catalog_item_health
+				p.category-item#beauty.js-tab!=CATALOG.catalog_item_beauty
+			.catalog-main__right
+				.catalog-main__list.js-list-prod.active(data-target="health")
+					//.catalog-main__wrap.catalog-main__wrap--show.js-catalog-show
+					.catalog-main__wrap.catalog-main__wrap--show.js-catalog-show
+						each product in preloadedHealthProducts
+							+product(product, 'active')
+						each product in restHealthProducts
+							+product(product, 'hidden')
+					//.catalog-main__wrap.catalog-main__wrap--hide.js-catalog-hide
+
+					p.catalog-main__count.js-catalog-count
+						span.js-product-show 0
+						| &nbsp;#{CATALOG.catalog_item_count}&nbsp;
+						span.js-product-all 0
+					case restHealthProducts.length
+						when 0
+						default
+							button.catalog-main__btn.btn.js-btn-catalog!=CATALOG.catalog_item_more_btn
+
+				.catalog-main__list.js-list-prod(data-target="beauty")
+					//.catalog-main__wrap.catalog-main__wrap--show.js-catalog-show
+					.catalog-main__wrap.catalog-main__wrap--show.js-catalog-show
+						each product in preloadedBeautyProducts
+							+product(product, 'active')
+						each product in restBeautyProducts
+							+product(product, 'hidden')
+					//.catalog-main__wrap.catalog-main__wrap--hide.js-catalog-hide
+
+					p.catalog-main__count.js-catalog-count
+						span.js-product-show 0
+						| &nbsp;#{CATALOG.catalog_item_count}&nbsp;
+						span.js-product-all 0
+					case restBeautyProducts.length
+						when 0
+						default
+							button.catalog-main__btn.btn.js-btn-catalog!=CATALOG.catalog_item_more_btn

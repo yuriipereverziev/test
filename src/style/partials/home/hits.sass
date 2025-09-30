@@ -1,0 +1,82 @@
+.hits-block
+	padding-top: 50px
+	padding-bottom: 50px
+	//height: 800px
+	+r(1023)
+		padding-top: 40px
+		padding-bottom: 40px
+		//height: 770px
+	+r(767)
+		padding-top: 30px
+		padding-bottom: 30px
+		//height: 650px
+	+r(639)
+		//height: 610px
+	+r(479)
+		padding-top: 25px
+		padding-bottom: 25px
+		//height: auto
+	&__title
+		margin-bottom: 40px
+		+r(1023)
+			margin-bottom: 35px
+		+r(767)
+			margin-bottom: 25px
+		+r(479)
+			margin-bottom: 15px
+	.slick-arrow
+		top: -90px
+		&.next
+			left: 1076px
+		&.prev
+			left: 1000px
+		+r(1249)
+			&.next
+				left: 961px
+			&.prev
+				left: 910px
+		+r(1023)
+			&.next
+				left: 686px
+			&.prev
+				left: 630px
+		+r(767)
+			top: -80px
+			&.next
+				left: 580px
+			&.prev
+				left: 530px
+		+r(639)
+			top: -60px
+			&.next
+				left: 410px
+			&.prev
+				left: 360px
+
+
+.slick-arrow
+	position: absolute
+	border: none
+	cursor: pointer
+	outline: 0
+	z-index: 1
+	background: none
+	font-size: 0
+	overflow: visible
+	padding: 0
+	.fico
+		font-size: 40px
+		outline: 0
+		color: #DFDFDF
+		transition: all .3s
+		line-height: 1
+	&:hover
+		.fico
+			color: #707070
+	&.next
+		padding-right: 0
+	&.prev
+		transform: scaleX(-1.1)
+	+r(767)
+		.fico
+			font-size: 30px

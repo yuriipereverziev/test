@@ -1,0 +1,11 @@
+include ../../mixins/product-page
+
+-
+	var PRODUCT_NAME = 'Beauty Age Skin'
+	var PRODUCT_CARD = LANG.product_card;
+	var CURRENT_PRODUCT = LANG.beauty_age_skin;
+	var RECOMMENDATIONS = LANG.recommendations.filter(prod => prod.name === 'Beauty Age Skin Peeling' || prod.name === 'Delislim' || prod.name === 'Steplex')
+	var REVIEWS = LANG.reviews.reviews_beauty_age_skin;
+	REVIEWS.length = 3;
+
++productPage(PRODUCT_NAME, PRODUCT_CARD, CURRENT_PRODUCT, RECOMMENDATIONS, REVIEWS)

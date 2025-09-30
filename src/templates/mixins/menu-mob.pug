@@ -1,0 +1,32 @@
+-
+    var MOBILE_MENU = LANG.mobile_menu;
+
+    function getActiveClass(active) {
+        return function (current) {
+            return current === active ? "active" : "";
+        }
+    };
+
+mixin menu-mob(page)
+    - const activeClass = getActiveClass(page);
+
+    .menu-mobile#js-mobile-menu
+        .menu-mobile__wrap
+            .menu-mobile__top
+                a.logo.menu-mobile__logo(href=url(LANG, '/'))
+                    img(src="img/svg/logo.svg", alt="")
+                .burger.js-burger(data-target="#js-mobile-menu")
+                    span.burger__line
+                    span.burger__line
+                    span.burger__line
+            ul.menu-mobile__nav.menu
+                li.menu__item
+                    a.menu__link(href=url(LANG, "catalog.html") class=activeClass("catalog"))!=MOBILE_MENU.mobile_menu_item1
+                li.menu__item
+                    a.menu__link(href=url(LANG, "about.html") class=activeClass("about"))!=MOBILE_MENU.mobile_menu_item2
+                li.menu__item
+                    a.menu__link(href=url(LANG, "contacts.html") class=activeClass("contacts"))!=MOBILE_MENU.mobile_menu_item3
+                li.menu__item
+                    a.menu__link(href=url(LANG, "reviews.html") class=activeClass("reviews"))!=MOBILE_MENU.mobile_menu_item4
+            .menu-mobile__bottom
+                button.menu-mobile__btn.btn.js-show-popup(title=MOBILE_MENU.mobile_menu_btn data-target="#popup")!=MOBILE_MENU.mobile_menu_btn

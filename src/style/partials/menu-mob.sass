@@ -1,0 +1,67 @@
+.menu-mobile
+	display: none
+	text-align: center
+	position: relative
+	padding-bottom: 30px
+	padding-top: 30px
+	overflow: hidden
+	background-color: white
+	box-shadow: 5px 6px 29px #EEF4E8
+	+r(1249)
+		font-size: 20px
+		width: 375px
+		bottom: 0
+		display: block
+		position: fixed
+		right: -50px
+		top: 0
+		z-index: 11
+		transform: translateX(100%)
+		transition: all 1s
+		&--active
+			transform: translateX(0)
+			right: 0
+	+r(479)
+		width: 100%
+		padding-top: 26px
+
+	&__wrap
+		display: flex
+		flex-direction: column
+		align-items: center
+		height: 100%
+		overflow-y: auto
+		justify-content: space-between
+		padding: 0 30px
+	&__top
+		display: flex
+		align-items: center
+		width: 100%
+		justify-content: space-between
+		padding-bottom: 20px
+		border-bottom: 1px solid transparentize($grey, .7)
+	&__logo
+		width: 150px
+		+r(767)
+			width: 125px
+	&__nav
+		margin: auto
+		display: flex
+		flex-direction: column
+		padding-top: 30px
+		min-height: 330px
+		width: 100%
+		text-align: left
+		.menu
+			&__item
+				+nlt
+					margin-right: 0
+					margin-bottom: 19px
+			&__link
+				font-size: 23px
+	&__bottom
+		margin-top: 30px
+		width: 100%
+	&__btn
+		max-width: 100%
+		margin-bottom: 15px

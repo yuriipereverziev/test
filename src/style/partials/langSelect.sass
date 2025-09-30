@@ -1,0 +1,56 @@
+.lang-select
+  flex-shrink: 0
+  width: 60px
+  height: 32px
+  position: relative
+
+  &__current
+    display: flex
+    justify-content: center
+    align-items: center
+    border: 1px solid $main-green
+    border-radius: 16px
+    background: white
+    width: 60px
+    height: 100%
+    cursor: pointer
+    padding: 5px 10px
+    transition: all .3s
+    position: relative
+    z-index: 1
+
+    &:hover
+      background: $light-blue
+
+  &__body
+    display: none
+    flex-direction: column
+    align-items: center
+    background: $light-blue
+    border-radius: 16px
+    width: 60px
+    transition: all .3s
+    padding-top: 37px
+    padding-bottom: 10px
+    position: absolute
+    top: 0
+    left: 0
+    right: 0
+
+  &--active &__body
+    display: flex
+
+  &__option
+    padding: 5px 10px
+
+    &--active
+      background: #a9d9de
+      border-radius: 5px
+
+  &__flag
+    width: 20px
+    height: auto
+  &__alt
+    font-size: 16px
+    text-transform: uppercase
+    color: $main-green

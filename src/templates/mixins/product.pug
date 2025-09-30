@@ -1,0 +1,42 @@
+mixin product(item, state)
+	- var PROD_INFO = LANG.product_info[item.tag] || null
+	- var MODIFIER = item.modifier
+	- var PRICE_TITLE = LANG.orderpageform.orderpageform_price
+	- var CURRENCY = LANG.product_info.currency
+	- var CLASS_STATE = state || ''
+
+	.product.js-product.swiper-slide(class=CLASS_STATE)
+		.product__content
+			p.product__label!= item.label
+
+			.product__wrap-photo
+				if MODIFIER
+					picture
+						//source(media='(max-width:479px)' srcset=item.mobSrcPhotoWebp type='image/webp')
+						//source(media='(max-width:479px)' srcset=item.mobSrcPhoto)
+						//source(srcset=item.srcPhotoWebp, type='image/webp')
+						img(class=MODIFIER src=item.srcPhoto, alt="" width='285' height='321')
+				else
+					picture
+						//source(media='(max-width:479px)' srcset=item.mobSrcPhotoWebp type='image/webp')
+						//source(media='(max-width:479px)' srcset=item.mobSrcPhoto)
+						//source(srcset=item.srcPhotoWebp, type='image/webp')
+						img(src=item.srcPhoto, alt="" width='285' height='321')
+			p.product__name!= item.name
+			.product__rating
+				.product__rating-stars
+					each star in item.stars
+						div(class="product__rating-star " + star.type)
+							img(src=star.src, alt="star")
+				p.product__rating-text!= item.text
+			p.product__desc!= item.desc
+
+			if PROD_INFO
+				.product__price
+					.product__price-col
+						p.product__price-text #{PRICE_TITLE}:
+					.product__price-col.product__price-col--new
+						span.product__value!= PROD_INFO.newPrice
+						span.product__currency!= CURRENCY
+
+		a.product__btn(href=item.link)!=item.btn

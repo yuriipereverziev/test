@@ -1,0 +1,210 @@
+.catalog-main
+	padding-top: 162px
+	padding-bottom: 129px
+	+r(1023)
+		padding-bottom: 80px
+	+r(767)
+		padding-top: 140px
+	+r(479)
+		padding-top: 110px
+		padding-bottom: 50px
+	&__title
+		margin-bottom: 50px
+		width: 160px
+		text-align: right
+		+r(767)
+			margin-bottom: 40px
+			width: auto
+	&__content
+		display: flex
+		justify-content: space-between
+		align-items: flex-start
+		+r(767)
+			display: block
+	&__left
+		flex-shrink: 0
+		max-width: 180px
+		width: 100%
+		margin-right: 30px
+		+r(1249)
+			max-width: 170px
+			margin-right: 20px
+		+r(767)
+			margin-right: 0
+			margin-bottom: 30px
+			max-width: 100%
+			display: flex
+			justify-content: space-between
+			align-items: center
+		+r(374)
+			flex-wrap: wrap
+			margin-bottom: 20px
+	&__right
+		width: 100%
+	&__list
+		display: none
+		&.active
+			display: block
+		.product
+			max-width: 285px
+			padding: 70px 26px 22px
+			//&:not(:nth-of-type(-n+3))
+			//	margin-top: 32px
+			&:hover
+				height: 598px
+			&__wrap-photo
+				height: auto
+				img
+					height: 265px
+					width: 265px
+					+object-fit(contain)
+		+r(1249)
+			.product
+				max-width: 265px
+				padding: 60px 15px 15px
+		+r(1023)
+			.product
+				max-width: 245px
+				//&:not(:nth-of-type(-n+2))
+				//	margin-top: 10px
+				&__wrap-photo
+					img
+						height: 215px
+						width: 215px
+		+r(767)
+			.product
+				max-width: 49%
+		+r(639)
+			.product
+				max-width: 100%
+				padding: 30px 10px 15px
+				&__wrap-photo
+					img
+						height: 195px
+						width: 195px
+		+r(479)
+			.product
+				height: auto
+				display: flex
+				flex-direction: column
+				&:hover
+					height: auto
+				&__wrap-photo
+					img
+						height: 165px
+						width: 165px
+				&__desc
+					height: auto
+					margin-bottom: 10px
+				&__btn
+					//margin-top: auto
+		+r(374)
+			.product
+				max-width: 100%
+				//&:not(:nth-of-type(-n+1))
+				//	margin-top: 10px
+	&__wrap
+		display: flex
+		flex-wrap: wrap
+		justify-content: flex-start
+		gap: 20px
+
+		+r(1249)
+			gap: 7px
+
+		+r(1023)
+			gap: 7px
+
+		+r(767)
+			justify-content: center
+
+
+		&--show
+			margin-bottom: 32px
+		&--hide
+			display: none
+			&.show
+				display: flex
+		+r(1023)
+			&--show
+				margin-bottom: 10px
+	&__count
+		margin-top: 90px
+		text-align: center
+		color: $dark-grey
+		font-size: 20px
+		line-height: 1
+		font-family: 'Roboto', Arial, Helvetica, sans-serif
+		+r(1249)
+			margin-top: 60px
+		+r(639)
+			font-size: 18px
+			margin-top: 40px
+	&__btn
+		max-width: 280px
+		margin: auto
+		margin-top: 13px
+		+r(639)
+			max-width: 250px
+
+
+
+.category-item
+	padding: 22px 28px 22px 0
+	color: $main-green
+	font-family: 'Inter', Arial, Helvetica, sans-serif
+	font-size: 18px
+	line-height: 32px
+	text-align: right
+	position: relative
+	cursor: pointer
+
+	&::before
+		content: ''
+		display: block
+		position: absolute
+		top: 0
+		bottom: 0
+		right: 0
+		left: -700px
+		background: $light-blue
+		z-index: -1
+		border-radius: 0 50px 50px 0
+	+nlt
+		margin-bottom: 10px
+	&.active
+		color: $light-blue
+		&::before
+			background: $main-green
+	+r(1249)
+		padding: 18px 20px 18px 0
+	+r(1023)
+		font-size: 16px
+		line-height: 26px
+		padding: 15px 15px 15px 0
+	+r(767)
+		padding: 10px
+		background: #F4F3F5
+		width: 23%
+		text-align: center
+		+nlt
+			margin-bottom: 0
+			margin-right: 10px
+		&::before
+			display: none
+		&.active
+			background: $main-green
+	+r(639)
+		border-radius: 20px
+		white-space: nowrap
+		width: calc(100%/2 - 5px)
+		font-size: 14px
+		+nlt
+			margin-right: 0
+	+r(479)
+		//font-size: 12px
+		padding: 8px 2px
+	+r(374)
+		width: calc(100%/2 - 5px)
+		&:nth-of-type(-n+2)
+			margin-bottom: 10px

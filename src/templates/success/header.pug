@@ -1,0 +1,24 @@
+- var SUCCESSPAGE = LANG.success;
+
+.success-header
+    .container
+        .success-header__wrapper
+            .success-header__info
+                h2.success-header__title!=SUCCESSPAGE.success_title
+                .success-header__desc
+                    p.success-header__text!=SUCCESSPAGE.success_text1
+                    p.success-header__text!=SUCCESSPAGE.success_text2
+            img.success-header__photo.js-success-product-photo(src="", alt="")
+        .success-header__list
+            .success-item
+                .success-item__wrap-photo
+                    img.success-item__ico(src="img/svg/success_1.svg", alt="")
+                p.success-item__text!=SUCCESSPAGE.success_text3
+            .success-item
+                .success-item__wrap-photo
+                    img.success-item__ico(src="img/svg/success_2.svg", alt="")
+                p.success-item__text!=SUCCESSPAGE.success_text4
+            .success-item
+                .success-item__wrap-photo
+                    img.success-item__ico(src="img/svg/success_3.svg", alt="")
+                p.success-item__text!=SUCCESSPAGE.success_text5

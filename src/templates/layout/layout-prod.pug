@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+html(lang=LANG.locale)
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    meta(http-equiv="X-UA-Compatible", content="ie=edge")
+    include head.pug
+    block head
+      title Naturallic
+  body
+    include ../loader
+
+    block content
+
+    include ../footer.pug
+    include ../popup.pug
+    include ../mixins/language-popup
+    +language-popup('index')
+    .overlay.js-overlay
+    include scripts.pug
+    block scripts

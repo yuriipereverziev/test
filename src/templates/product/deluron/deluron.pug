@@ -1,0 +1,11 @@
+include ../../mixins/product-page
+
+-
+	var PRODUCT_NAME = 'Deluron Forte'
+	var PRODUCT_CARD = LANG.product_card;
+	var CURRENT_PRODUCT = LANG.deluron;
+	var RECOMMENDATIONS = LANG.recommendations.filter(prod => prod.name === 'Feronex' || prod.name === 'Paraxan' || prod.name === 'Exofeet Oil')
+	var REVIEWS = LANG.reviews.reviews_deluron;
+	REVIEWS.length = 3;
+
++productPage(PRODUCT_NAME, PRODUCT_CARD, CURRENT_PRODUCT, RECOMMENDATIONS, REVIEWS)

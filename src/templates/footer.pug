@@ -1,0 +1,37 @@
+- var FOOTER = LANG.footer;
+
+footer.footer
+	.footer__wrapper
+		.container
+			.footer__top
+				.footer__docs
+					a.footer__logo(href=url(LANG,'/'))
+						img(src="img/svg/logo-w.svg", alt="")
+					.footer__contact
+						p.footer__contact-text!=FOOTER.footer_tel_country
+						a.footer__contact-link(href=`tel:${FOOTER.footer_tel_number}`)!=FOOTER.footer_tel_number
+					.footer__contact
+						a.footer__contact-link(href=`tel:${FOOTER.footer_email}`)!=FOOTER.footer_email
+					.footer__contact
+						p.footer__copy
+							span.year
+							|
+							| Copyright by naturallic
+				ul.footer__menu.menu-f
+					li.menu-f__item
+						a.menu-f__link(href=url(LANG, "catalog.html"))!=FOOTER.footer_menu_item1
+					li.menu-f__item
+						a.menu-f__link(href=url(LANG, "about.html"))!=FOOTER.footer_menu_item2
+					li.menu-f__item
+						a.menu-f__link(href=url(LANG, "reviews.html"))!=FOOTER.footer_menu_item3
+					li.menu-f__item
+						a.menu-f__link(href=url(LANG, "contacts.html"))!=FOOTER.footer_menu_item4
+				.footer__contacts
+					.footer__contact
+						a.footer__link(href="terms.html")!=FOOTER.footer_terms
+					.footer__contact
+						a.footer__link(href="privacy.html")!=FOOTER.footer_privacy
+					.footer__contact
+						a.footer__link(href="cookie.html")!=FOOTER.footer_cookies
+
+

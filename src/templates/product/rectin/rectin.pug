@@ -1,0 +1,11 @@
+include ../../mixins/product-page
+
+-
+    var PRODUCT_NAME = 'Rectin'
+    var PRODUCT_CARD = LANG.product_card;
+    var CURRENT_PRODUCT = LANG.rectin;
+    var RECOMMENDATIONS = LANG.recommendations.filter(prod => prod.name === 'Deluron Forte' || prod.name === 'Feronex' || prod.name === 'Steplex')
+    var REVIEWS = LANG.reviews.reviews_rectin;
+    REVIEWS.length = 3;
+
++productPage(PRODUCT_NAME, PRODUCT_CARD, CURRENT_PRODUCT, RECOMMENDATIONS, REVIEWS)

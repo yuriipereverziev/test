@@ -1,0 +1,14 @@
+include ../../mixins/product-page
+
+-
+	var isRender = LANG.locale !== 'ee' && LANG.locale !== 'lv' && LANG.locale !== 'lt'
+
+	var PRODUCT_NAME = 'Depanten'
+	var PRODUCT_CARD = LANG.product_card;
+	var CURRENT_PRODUCT = LANG.depanten;
+	var RECOMMENDATIONS = LANG.recommendations.filter(prod => prod.name === 'Neoveris' || prod.name === 'GUAVITAL+' || prod.name === 'Exofeet Oil')
+	var REVIEWS = LANG.reviews.reviews_depanten;
+	REVIEWS.length = 3;
+
+if isRender
+	+productPage(PRODUCT_NAME, PRODUCT_CARD, CURRENT_PRODUCT, RECOMMENDATIONS, REVIEWS)

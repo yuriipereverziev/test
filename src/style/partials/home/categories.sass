@@ -1,0 +1,137 @@
+.categories
+	padding-top: 100px
+	padding-bottom: 50px
+	+r(1023)
+		padding-top: 80px
+		padding-bottom: 40px
+	+r(767)
+		padding-top: 60px
+		padding-bottom: 30px
+	+r(479)
+		padding-top: 50px
+		padding-bottom: 25px
+	&__title
+		margin-bottom: 40px
+		+r(1023)
+			margin-bottom: 35px
+		+r(767)
+			margin-bottom: 25px
+		+r(479)
+			margin-bottom: 15px
+	&__list
+		display: flex
+		align-items: flex-start
+		justify-content: space-between
+		+r(767)
+			flex-wrap: wrap
+		+r(479)
+			flex-direction: column
+			align-items: center
+	
+
+.category
+	position: relative
+	max-width: 535px
+	width: 100%
+	&__img
+		width: 100%
+	&:hover
+		.category
+			&__back
+				bottom: 0
+				pointer-events: visible
+				background: white
+				box-shadow: 0 6px 11px rgba(0, 0, 0, 0.1)
+			&__title
+				background: transparent
+			&__bottom
+				opacity: 1
+	+r(1249)
+		max-width: calc(100%/2 - 20px)
+	+r(479)
+		max-width: 300px
+		&:not(:last-of-type)
+			margin-bottom: 15px
+	&__back
+		position: absolute
+		margin: 20px
+		padding: 23px
+		transition: all .3s
+		pointer-events: none
+		z-index: 1
+		display: flex
+		flex-direction: column
+		align-items: center
+		left: 0
+		right: 0
+		bottom: -140px
+		+r(639)
+			margin: 10px
+			padding: 10px
+			bottom: -165px
+		+r(479)
+			bottom: -125px
+	&__title
+		font-family: 'Roboto', Arial, Helvetica, sans-serif
+		font-weight: 400
+		font-size: 30px
+		text-align: center
+		line-height: 42px
+		text-transform: uppercase
+		color: $main-green
+		border: none
+		border-radius: 28px
+		background: $gold
+		padding: 15px 25px
+		transition: all .3s ease-in-out
+		display: inline-block
+		+r(1249)
+			font-size: 30px
+			line-height: 38px
+		+r(1023)
+			font-size: 22px
+			line-height: 1.2
+			padding: 6px 15px
+
+	&__bottom
+		margin-top: 26px
+		opacity: 0
+		transition: all .3s ease-in-out
+		height: 100%
+		display: flex
+		flex-direction: column
+		+r(1249)
+			margin-top: 20px
+		+r(1023)
+			margin-top: 10px
+	&__desc
+		display: inline-flex
+		align-items: center
+		font-family: 'Roboto', Arial, Helvetica, sans-serif
+		font-size: 22px
+		text-align: center
+		line-height: 1.3
+		letter-spacing: -0.055em
+		color: #8B8F8F
+		margin-bottom: 40px
+		min-height: 60px
+
+		+r(1249)
+			margin-bottom: 30px
+		+r(1023)
+			font-size: 17px
+			line-height: 1.2
+			margin-bottom: 13px
+			min-height: 75px
+		+r(767)
+			font-size: 16px
+		+r(639)
+			min-height: 100px
+		+r(479)
+			min-height: 70px
+	&__btn
+		font-weight: 400
+		letter-spacing: -0.05em
+		margin-top: auto
+		+r(1023)
+			max-width: 100%

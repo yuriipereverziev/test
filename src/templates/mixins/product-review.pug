@@ -1,0 +1,12 @@
+mixin product-review(review)
+    .product-item__review.review-small
+        .review-small__top
+            .review-small__desc
+                .review-small__name!=review.name
+                .review-small__rating
+                    .review-small__rating-stars
+                        each star in review.stars
+                            img.review-small__rating-star(src=star.src alt=star.type)
+                    p.review-small__rating-text!=review.rating_text
+            img.review-small__photo(src=review.src alt='avatar')
+        p.review-small__text!=review.text

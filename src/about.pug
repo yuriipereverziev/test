@@ -1,0 +1,10 @@
+extends templates/layout/layout.pug
+
+block head
+	-var title = LANG.menu.menu_title_about_us
+	title Naturallic - #{title}
+
+block content
+	include templates/mixins/menu
+	+menu("about")
+	include templates/about/about

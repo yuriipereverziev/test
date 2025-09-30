@@ -1,0 +1,9 @@
+mixin review(review)
+	.review.js-review
+		.review__top
+			img.review__photo(src=review.src, alt="")
+			.review__desc
+				p.review__name!= review.name
+				p.review__desc!= review.desc
+		.review__bottom
+			p.review__text!= review.text

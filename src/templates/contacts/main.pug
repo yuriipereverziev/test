@@ -1,0 +1,17 @@
+- var CONTACTS = LANG.contacts;
+
+section.contacts
+	.container
+		h2.contacts__title.title!=CONTACTS.contacts_title
+		.contacts__wrapper
+			.contacts__form
+				form.contacts-form.js-order-form(action="ajax.php", method="post")
+					p.contacts-form__title!=CONTACTS.contacts_form_title
+					p.contacts-form__desc!=CONTACTS.contacts_form_description
+					.contacts-form__wrapper
+						.contacts-form__inputs
+							input.contacts-form__input(type="text" name="name" placeholder=CONTACTS.contacts_field_name required)
+							input.contacts-form__input(type="phone" name="phone" placeholder=CONTACTS.contacts_field_phone required)
+							input.contacts-form__input(type="email" name="email" placeholder=CONTACTS.contacts_field_email required)
+							textarea.contacts-form__input.contacts-form__input--text(name="comment" placeholder=CONTACTS.contacts_field_message required)
+						button.contacts-form__btn.btn!=CONTACTS.contacts_btn

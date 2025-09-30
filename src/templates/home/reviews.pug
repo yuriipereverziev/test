@@ -1,0 +1,8 @@
+- var REVIEWS = LANG.home.reviews;
+section.reviews
+	.container
+		h2.reviews__title.title!=REVIEWS.reviews_block_title
+		.reviews__slider.js-slider-reviews-wrap
+			.reviews__list.swiper-wrapper
+				include reviews-list
+			.scrollbar.js-slider-reviews-scrollbar

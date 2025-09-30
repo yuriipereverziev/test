@@ -1,0 +1,11 @@
+include ../../mixins/product-page
+
+-
+	var PRODUCT_NAME = 'Delislim'
+	var PRODUCT_CARD = LANG.product_card;
+	var CURRENT_PRODUCT = LANG.delislim;
+	var RECOMMENDATIONS = LANG.recommendations.filter(prod => prod.name === 'Beauty Age Skin' || prod.name === 'Beauty Age Skin Peeling' || prod.name === 'Keramin')
+	var REVIEWS = LANG.reviews.reviews_delislim;
+	REVIEWS.length = 3;
+
++productPage(PRODUCT_NAME, PRODUCT_CARD, CURRENT_PRODUCT, RECOMMENDATIONS, REVIEWS)

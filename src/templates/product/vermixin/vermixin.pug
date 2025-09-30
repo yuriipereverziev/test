@@ -1,0 +1,13 @@
+include ../../mixins/product-page
+
+-
+	var isRender = LANG.locale !== 'ee' && LANG.locale !== 'lt' && LANG.locale !== 'lv' && LANG.locale !== 'pl' && LANG.locale !== 'bg' && LANG.locale !== 'it'
+	var PRODUCT_NAME = 'Vermixin'
+	var PRODUCT_CARD = LANG.product_card;
+	var CURRENT_PRODUCT = LANG.vermixin;
+	var RECOMMENDATIONS = LANG.recommendations.filter(prod => prod.name === 'Steplex' || prod.name === 'Neoveris' || prod.name === 'Beauty Age Skin')
+	var REVIEWS = LANG.reviews.reviews_vermixin;
+	REVIEWS.length = 3;
+
+if isRender
+	+productPage(PRODUCT_NAME, PRODUCT_CARD, CURRENT_PRODUCT, RECOMMENDATIONS, REVIEWS)

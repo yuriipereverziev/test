@@ -1,0 +1,18 @@
+.success-reviews
+  padding-bottom: 130px
+  padding-top: 0
+  +r(1023)
+    padding-top: 50px
+  +r(767)
+    padding-bottom: 50px
+  &__slider
+    overflow: hidden
+    padding-bottom: 15px
+  &__list
+    margin-bottom: 40px
+  .swiper-slide
+    +r(639)
+      opacity: 0
+      &.swiper-slide-active
+        opacity: 1
+        transition: all .3s

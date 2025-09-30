@@ -1,0 +1,30 @@
+- var CATEGORIES = LANG.home.category;
+section.categories
+	.container
+		h2.categories__title.title!=CATEGORIES.category_block_title
+	.container.container--list
+		.categories__list
+			.category
+				.category__front
+					picture
+						source(media="(max-width:479px)" srcset="img/category_1-mob.webp" type="image/webp")
+						source(media="(max-width:479px)" srcset="img/category_1-mob.jpg")
+						source(srcset="img/category_1.webp" type="image/webp")
+						img.category__img(src="img/category_1.jpg", alt="")
+				.category__back
+					h4.category__title!=CATEGORIES.category_block_title1
+					.category__bottom
+						p.category__desc!=CATEGORIES.category_block_description1
+						a.category__btn.btn(href="catalog.html?id=beauty")!=CATEGORIES.category_block_btn
+			.category
+				.category__front
+					picture
+						source(media="(max-width:479px)" srcset="img/category_3-mob.webp" type="image/webp")
+						source(media="(max-width:479px)" srcset="img/category_3-mob.jpg")
+						source(srcset="img/category_3.webp" type="image/webp")
+						img.category__img(src="img/category_3.jpg", alt="")
+				.category__back
+					h4.category__title!=CATEGORIES.category_block_title2
+					.category__bottom
+						p.category__desc!=CATEGORIES.category_block_description2
+						a.category__btn.btn(href="catalog.html?id=health")!=CATEGORIES.category_block_btn

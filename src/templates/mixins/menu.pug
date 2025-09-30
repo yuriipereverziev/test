@@ -1,0 +1,40 @@
+include langSelect
+include menu-mob
+
+-
+    var MENU = LANG.menu;
+
+    function getActiveClass(active) {
+        return function (current) {
+            return current === active ? "active" : "";
+        }
+    };
+
+mixin menu(page)
+    - const activeClass = getActiveClass(page);
+    +menu-mob(page)
+    .nav
+        .container
+            .nav__wrap
+                a.nav__logo(href=url(LANG, 'index.html'))
+                    img(src="img/svg/logo.svg", alt="Naturallic")
+
+                ul.nav__menu.menu
+                    li.menu__item
+                        a.menu__link(href=url(LANG, 'catalog.html') class=activeClass("catalog"))!=MENU.menu_title_catalog
+                    li.menu__item
+                        a.menu__link(href=url(LANG, 'about.html') class=activeClass("about"))!=MENU.menu_title_about_us
+                    li.menu__item
+                        a.menu__link(href=url(LANG, 'contacts.html') class=activeClass("contacts"))!=MENU.menu_title_contacts
+                    li.menu__item
+                        a.menu__link(href=url(LANG, 'reviews.html') class=activeClass("reviews"))!=MENU.menu_title_review
+                .nav__controls
+                    .nav__btn-wrap
+                        a.nav__link-tel(href=`tel:${MENU.menu_phone}`)!=MENU.menu_phone
+                        button.nav__btn.btn.js-show-popup(title=MENU.menu_title_btn data-target="#popup")!=MENU.menu_title_btn
+                    +langSelect(page)
+
+                .burger.js-burger(data-target="#js-mobile-menu")
+                    span.burger__line
+                    span.burger__line
+                    span.burger__line

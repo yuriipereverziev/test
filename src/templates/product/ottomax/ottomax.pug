@@ -1,0 +1,11 @@
+include ../../mixins/product-page
+
+-
+	var PRODUCT_NAME = 'Ottomax+'
+	var PRODUCT_CARD = LANG.product_card;
+	var CURRENT_PRODUCT = LANG.ottomax;
+	var RECOMMENDATIONS = LANG.recommendations.filter(prod => prod.name === 'Visoptic DUO Day' || prod.name === 'Visoptic DUO Night' || prod.name === 'Neoveris')
+	var REVIEWS = LANG.reviews.reviews_ottomax;
+	REVIEWS.length = 3;
+
++productPage(PRODUCT_NAME, PRODUCT_CARD, CURRENT_PRODUCT, RECOMMENDATIONS, REVIEWS)

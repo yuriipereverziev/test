@@ -1,0 +1,96 @@
+.about
+	padding-top: 50px
+	padding-bottom: 150px
+	background: url('../img/about_bg.jpg') no-repeat calc(50% - -370px) 165px
+	background-size: 650px
+	+r(1249)
+		padding-bottom: 150px
+	+r(1023)
+		padding-top: 40px
+		padding-bottom: 90px
+		background-position: calc(50% - -300px) 150px
+		background-size: 500px
+	+r(767)
+		padding-top: 30px
+		padding-bottom: 70px
+		background-position: calc(50% - -245px) 135px
+		background-size: 400px
+	+r(639)
+		padding-top: 30px
+		padding-bottom: 60px
+		background: none
+	+r(479)
+		padding-top: 25px
+		pb50
+	&__title
+		margin-bottom: 40px
+		+r(1023)
+			margin-bottom: 35px
+		+r(767)
+			margin-bottom: 25px
+		+r(479)
+			margin-bottom: 15px
+	&__logo
+		display: block
+		max-width: 537px
+		width: 100%
+		margin-bottom: 85px
+		+r(1249)
+			max-width: 480px
+			margin-bottom: 70px
+		+r(1023)
+			max-width: 350px
+			margin-bottom: 40px
+		+r(767)
+			max-width: 300px
+			margin-bottom: 25px
+		+r(639)
+			//margin-bottom: 30px
+		+r(479)
+			max-width: 200px
+	&__desc
+		text-align: left
+		max-width: 537px
+		width: 100%
+		margin-bottom: 85px
+		+r(1249)
+			padding-left: 0
+			margin-bottom: 70px
+			max-width: 480px
+		+r(1023)
+			max-width: 350px
+			margin-bottom: 40px
+		+r(767)
+			text-align: left
+			max-width: 300px
+			margin-bottom: 25px
+		+r(639)
+			max-width: 100%
+			margin-bottom: 0
+	&__text
+		font-family: 'Roboto', Arial, Helvetica, sans-serif
+		font-weight: 300
+		font-size: 24px
+		line-height: 1.4
+		color: $main-green
+		+nlt
+			margin-bottom: 15px
+		&--main
+			font-weight: bold
+		+r(1023)
+			font-size: 20px
+			line-height: 1.4
+		+r(767)
+			font-size: 18px
+
+.webp .about
+	background: url('../img/about_bg.webp') no-repeat calc(50% - -370px) 165px
+	background-size: 650px
+	+r(1023)
+		background-position: calc(50% - -300px) 150px
+		background-size: 500px
+	+r(767)
+		background-position: calc(50% - -245px) 135px
+		background-size: 400px
+	+r(639)
+		background: none

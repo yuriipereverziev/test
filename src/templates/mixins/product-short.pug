@@ -1,0 +1,35 @@
+mixin productShort(item)
+	if item.narrow
+		a.product-short(href=item.link class="product-short--narrow")
+			.product-short__wrap-photo(class="product-short__wrap-photo--narrow")
+				picture
+					//source(media='(max-width:479px)' srcset=item.mobSrcPhotoWebp type='image/webp')
+					//source(media='(max-width:479px)' srcset=item.mobSrcPhoto)
+					//source(srcset=item.srcPhotoWebp type='image/webp')
+					img(src=item.srcPhoto, alt="")
+			.product-short__info
+				p.product-short__name!= item.name
+				.product-short__rating
+					.product-short__rating-stars
+						each star in item.stars
+							div(class="product-short__rating-star " + star.type)
+								img(src=star.src, alt="star")
+					p.product-short__rating-text!= item.text
+				p.product-short__niche!= item.niche
+	else
+		a.product-short(href=item.link)
+			.product-short__wrap-photo(class="product-short__wrap-photo--narrow")
+				picture
+					source(media='(max-width:479px)' srcset=item.mobSrcPhotoWebp type='image/webp')
+					source(media='(max-width:479px)' srcset=item.mobSrcPhoto)
+					source(srcset=item.srcPhotoWebp type='image/webp')
+					img(src=item.srcPhoto, alt="")
+			.product-short__info
+				p.product-short__name!= item.name
+				.product-short__rating
+					.product-short__rating-stars
+						each star in item.stars
+							div(class="product-short__rating-star " + star.type)
+								img(src=star.src, alt="star")
+					p.product-short__rating-text!= item.text
+				p.product-short__niche!= item.niche

@@ -1,0 +1,185 @@
+.order-block
+  padding: 230px 0 140px
+  .contacts-form
+    &__inputs
+      margin-bottom: 20px
+    &__counter
+      margin-bottom: 20px
+    &__price
+      margin-bottom: 30px
+    &__price-item
+      +nlt
+        margin-bottom: 9px
+    &__promocode
+      margin-bottom: 25px
+
+  +r(767)
+    padding: 120px 0 50px
+
+  &__wrapper
+    display: flex
+    align-items: center
+    justify-content: center
+    +r(1023)
+      flex-direction: column
+
+  &__product-wrap
+    margin-right: 160px
+    max-width: 340px
+    +r(1249)
+      margin-right: 60px
+    +r(1023)
+      margin-right: 0
+      margin-bottom: 30px
+  &__product
+    margin-bottom: 50px
+    +r(767)
+      display: none
+  &__name
+    font-size: 32px
+    text-align: center
+    color: $main-green
+    text-transform: uppercase
+  &__form
+    flex-shrink: 0
+    max-width: 570px
+    width: 100%
+  & .contacts-form
+    padding: 60px 65px
+    +r(767)
+      padding: 30px
+    +r(479)
+      padding: 30px 15px
+    &__title
+      margin-bottom: 45px
+      +r(767)
+        margin-bottom: 20px
+    //&__counter
+      //margin-bottom: 90px
+      //+r(767)
+      //  margin-bottom: 40px
+
+.counter
+  display: flex
+  align-items: center
+  justify-content: center
+  color: $main-green
+  &__photo
+    max-width: 100px
+    width: 100%
+  &__text
+    font-size: 22px
+    line-height: 18px
+    text-transform: uppercase
+    margin-right: 20px
+    +r(479)
+      display: none
+  &__block
+    display: flex
+    align-items: center
+  &__block-arrow
+    font-size: 22px
+    line-height: 18px
+    text-transform: uppercase
+    cursor: pointer
+    user-select: none
+  &__num
+    display: flex
+    align-items: center
+    justify-content: center
+    width: 55px
+    height: 55px
+    border: 1px solid white
+    font-size: 22px
+    margin: 0 7px
+
+.price-item
+  display: flex
+  align-items: flex-end
+  justify-content: space-between
+  color: $main-green
+  position: relative
+  &::before
+    content: ''
+    display: block
+    position: absolute
+    left: 0
+    right: 0
+    bottom: 2px
+    border-bottom: 2px dotted $main-green
+  &--main
+    font-weight: bold
+    .price-item
+      &__text
+        font-size: 20px
+      &__value
+        font-size: 18px
+  &__text
+    background: $light-blue
+    position: relative
+    z-index: 1
+    padding-right: 5px
+    font-size: 18px
+  &__value
+    background: $light-blue
+    position: relative
+    z-index: 1
+    padding-left: 5px
+    font-size: 16px
+
+
+.promocode
+  display: flex
+  align-items: center
+  justify-content: space-between
+  +r(479)
+    display: block
+  &__input
+    display: block
+    max-width: 100%
+    width: 100%
+    box-sizing: border-box
+    height: 40px
+    border: 1px solid white
+    padding: 0 15px
+    font-weight: 300
+    font-size: 16px
+    color: $main-green
+    font-family: 'GraphikLCG', Arial, Helvetica, sans-serif
+    margin-right: 20px
+    +placeholder
+      font-size: 16px
+      font-weight: 300
+      color: #a8b09e
+      text-transform: uppercase
+      font-family: 'GraphikLCG', Arial, Helvetica, sans-serif
+      opacity: 1
+    &.error
+      background: #fff url('../img/svg/error.svg') no-repeat center right 5px
+      background-size: 25px
+    &.check
+      background: #fff url('../img/svg/check.svg') no-repeat center right 5px
+      background-size: 25px
+    +r(479)
+      margin-right: 0
+      margin-bottom: 10px
+
+  &__btn
+    display: block
+    outline: none
+    cursor: pointer
+    max-width: 130px
+    width: 100%
+    line-height: 40px
+    text-transform: uppercase
+    padding: 0 10px
+    font-family: 'GraphikLCG', Arial, Helvetica, sans-serif
+    color: $main-green
+    background: $gold
+    border: none
+    &:disabled
+      color: white
+      background: #eee
+      cursor: no-drop
+    +r(479)
+      max-width: 100%

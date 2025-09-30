@@ -1,0 +1,96 @@
+.faq
+	padding-top: 50px
+	padding-bottom: 50px
+	+r(1249)
+		padding-bottom: 50px
+	+r(1023)
+		padding-top: 40px
+		padding-bottom: 40px
+	+r(767)
+		padding-top: 30px
+		padding-bottom: 30px
+	+r(479)
+		padding-top: 25px
+		padding-bottom: 25px
+	&__title
+		margin-bottom: 40px
+		+r(1023)
+			margin-bottom: 35px
+		+r(767)
+			margin-bottom: 25px
+		+r(479)
+			margin-bottom: 15px
+
+
+
+.question
+	border-bottom: 1px solid $gold
+	font-family: 'Roboto', Arial, Helvetica, sans-serif
+	padding: 0 24px
+	color: $main-green
+	+r(767)
+		padding: 0 20px
+	+r(639)
+		padding: 0 15px
+	+r(479)
+		padding: 0 5px
+
+	&:first-child .question__top
+		padding-top: 0
+
+	&__top
+		display: flex
+		align-items: center
+		justify-content: space-between
+		gap: 10px
+		cursor: pointer
+		padding-top: 30px
+		padding-bottom: 30px
+
+		&.active
+			.question__icon
+				transform: rotate(45deg)
+
+		+r(1023)
+			padding-top: 25px
+			padding-bottom: 25px
+		+r(767)
+			padding-top: 20px
+			padding-bottom: 20px
+		+r(479)
+			padding: 10px 0
+			height: auto
+	&__ttl
+		font-weight: 400
+		font-size: 18px
+		line-height: 1.3
+		+r(1023)
+			font-size: 17px
+		+r(767)
+			font-size: 16px
+		+r(479)
+			margin-right: 10px
+	&__text
+		font-size: 16px
+		line-height: 1.3
+		color: $hardest-gray
+		display: none
+		padding-bottom: 33px
+		i
+			font-style: italic
+		+r(1023)
+			padding-bottom: 20px
+			line-height: 1.3
+		+r(767)
+			font-size: 16px
+		+r(479)
+			padding-bottom: 15px
+	&__icon
+		flex-shrink: 0
+		width: 8px
+		height: 8px
+		border-right: 2px solid #565656
+		border-bottom: 2px solid #565656
+		transform: rotate(-45deg)
+		transition: .3s ease-in-out
+

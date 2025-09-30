@@ -1,0 +1,145 @@
+include ../mixins/product-review
+include ../mixins/product-short
+
+mixin productPage(PRODUCT_NAME, PRODUCT_CARD, CURRENT_PRODUCT, RECOMMENDATIONS, REVIEWS)
+
+    -
+        var PRODUCT_OBJ = LANG.hits.filter(prod => prod.name.toLowerCase() === PRODUCT_NAME.toLowerCase())[0]
+        var PRODUCT_KEY = PRODUCT_OBJ.link.split('.')[0]
+        var MODIFIER = PRODUCT_OBJ.modifier
+        var prodWithSecondImgMod = [
+            'Visoptic DUO Day',
+            'Visoptic DUO Night',
+            'Deluron Forte',
+            'Ottomax+',
+            'Vermixin',
+            'Wirex men’s formula',
+            'Steplex',
+            'Rectin'
+        ]
+        var PRODUCT_CATEGORY = PRODUCT_OBJ.category
+        var PRODUCT_IMAGE_SRC = PRODUCT_OBJ.srcPhoto.split('.')[0]
+        var PRODUCT_STARS = PRODUCT_OBJ.stars
+        var PRICE_TITLE = LANG.orderpageform.orderpageform_price
+        var PRICE_INFO = LANG.product_info[PRODUCT_OBJ.tag] || null
+        var CURRENCY = LANG.product_info.currency
+
+    section.product-item
+        .container
+            .product-item__breadcrumbs.breadcrumbs
+                a.breadcrumbs__link(href="/")!=PRODUCT_CARD.product_card_bread_main
+                span.breadcrumbs__line /
+                a.breadcrumbs__link(href="catalog.html")!=PRODUCT_CARD.product_card_bread_catalog
+                span.breadcrumbs__line /
+                a.breadcrumbs__link(href="catalog.html?id=" + PRODUCT_CATEGORY)!= CURRENT_PRODUCT.category
+                span.breadcrumbs__line /
+                span.breadcrumbs__main!=CURRENT_PRODUCT.title
+            .product-item__wrapper
+                .product-item__slider.slider-prod
+                    .slider-prod__nav.js-slider-product-nav
+                        .slider-prod__nav-item
+                            picture
+                                source(srcset=PRODUCT_IMAGE_SRC + '.webp' type='image/webp')
+                                img(src=PRODUCT_IMAGE_SRC + ".png", alt=PRODUCT_NAME)
+                        .slider-prod__nav-item
+                            picture
+                                source(srcset=PRODUCT_IMAGE_SRC + '_1.webp' type='image/webp')
+                                img(src=PRODUCT_IMAGE_SRC + "_1.png", alt=PRODUCT_NAME)
+                        .slider-prod__nav-item
+                            picture
+                                source(srcset=PRODUCT_IMAGE_SRC + '_2.webp' type='image/webp')
+                                img(src=PRODUCT_IMAGE_SRC + "_2.png", alt=PRODUCT_NAME)
+                    .slider-prod__for.js-slider-product-for
+                        .slider-prod__for-item
+                            picture
+                                source(srcset=PRODUCT_IMAGE_SRC + '.webp' type='image/webp')
+                                if MODIFIER
+                                    img(class=MODIFIER src=PRODUCT_IMAGE_SRC + ".png", alt=PRODUCT_NAME)
+                                else
+                                    img(src=PRODUCT_IMAGE_SRC + ".png", alt=PRODUCT_NAME)
+
+                        .slider-prod__for-item
+                            picture
+                                source(srcset=PRODUCT_IMAGE_SRC + '_1.webp' type='image/webp')
+
+                                if MODIFIER && prodWithSecondImgMod.includes(PRODUCT_NAME)
+                                    img(class=MODIFIER src=PRODUCT_IMAGE_SRC + "_1.png", alt=PRODUCT_NAME)
+                                else
+                                    img(src=PRODUCT_IMAGE_SRC + "_1.png", alt=PRODUCT_NAME)
+
+                        .slider-prod__for-item
+                            picture
+                                source(srcset=PRODUCT_IMAGE_SRC + '_2.webp' type='image/webp')
+                                img(src=PRODUCT_IMAGE_SRC + "_2.png", alt=PRODUCT_NAME)
+                .product-item__info
+                    h2.product-item__name!=CURRENT_PRODUCT.title
+                    .product-item__rating
+                        .product-item__rating-stars
+                            each star in PRODUCT_STARS
+                                img.product-item__rating-star(src=star.src, alt="")
+
+                        p.product-item__rating-text!=CURRENT_PRODUCT.review_count
+                    ul.product-item__list.product-list
+                        li.product-list__item
+                            !=PRODUCT_CARD.product_niche
+                            !=CURRENT_PRODUCT.niche
+                        li.product-list__item
+                            !=PRODUCT_CARD.product_form_factor
+                            !=CURRENT_PRODUCT.form_factor
+                    if PRICE_INFO
+                        .product-item__price
+                            .product-item__price-col
+                                p.product-item__price-text #{PRICE_TITLE}:
+                            .product-item__price-col.product-item__price-col--new
+                                span.product-item__value!= PRICE_INFO.newPrice
+                                span.product-item__currency!= CURRENCY
+                    a.product-item__btn.button.button--gold(href='order.html?id=' + PRODUCT_KEY)!=PRODUCT_CARD.product_btn
+                    p.product-item__text!=CURRENT_PRODUCT.short_description
+                    .product-item__description.js-accordeon
+                        .specification
+                            .specification__top.js-btn-accordeon
+                                h3.specification__ttl!=PRODUCT_CARD.product_description
+                                i.fico.fico-cross
+                            p.specification__text.js-info-accordeon!=CURRENT_PRODUCT.description
+                        .specification
+                            .specification__top.js-btn-accordeon
+                                h3.specification__ttl!=PRODUCT_CARD.product_compound
+                                i.fico.fico-cross
+                            p.specification__text.js-info-accordeon!=CURRENT_PRODUCT.compound
+                        .specification
+                            .specification__top.js-btn-accordeon
+                                h3.specification__ttl!=PRODUCT_CARD.product_usage
+                                i.fico.fico-cross
+                            p.specification__text.js-info-accordeon!=CURRENT_PRODUCT.usage
+                        .specification
+                            .specification__top.js-btn-accordeon
+                                h3.specification__ttl!=PRODUCT_CARD.product_contraindications
+                                i.fico.fico-cross
+                            p.specification__text.js-info-accordeon!=CURRENT_PRODUCT.contraindications
+                        .specification
+                            .specification__top.js-btn-accordeon
+                                h3.specification__ttl!=PRODUCT_CARD.product_additional
+                                i.fico.fico-cross
+                            .specification__text.js-info-accordeon
+                                .product-list
+                                    li.product-list__item
+                                        !=PRODUCT_CARD.product_manufacturer
+                                        !=CURRENT_PRODUCT.manufacturer
+                                    li.product-list__item.mb
+                                        !=PRODUCT_CARD.product_suitability
+                                        !=CURRENT_PRODUCT.suitability
+                                    li.product-list__item
+                                        !=PRODUCT_CARD.product_keep
+                                        !=CURRENT_PRODUCT.keep
+                        .specification
+                            .specification__top.js-btn-accordeon
+                                h3.specification__ttl!=PRODUCT_CARD.product_reviews
+                                i.fico.fico-cross
+                            .specification__text.js-info-accordeon
+                                each review in REVIEWS
+                                    +product-review(review)
+            .product-item__recomm
+                h2.product-item__recomm-ttl.title!= PRODUCT_CARD.product_recommendations
+                .product-item__recomm-list
+                    each product in RECOMMENDATIONS
+                        +productShort(product)

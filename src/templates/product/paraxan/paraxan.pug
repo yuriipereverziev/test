@@ -1,0 +1,13 @@
+include ../../mixins/product-page
+include ../../mixins/product-review
+include ../../mixins/product-short
+
+-
+	var PRODUCT_NAME = 'Paraxan'
+	var PRODUCT_CARD = LANG.product_card;
+	var CURRENT_PRODUCT = LANG.paraxan;
+	var RECOMMENDATIONS = LANG.recommendations.filter(prod => prod.name === 'Steplex' || prod.name === 'Beauty Age Skin Peeling' || prod.name === 'Beauty Age Skin')
+	var REVIEWS = LANG.reviews.reviews_paraxan;
+	REVIEWS.length = 3;
+
++productPage(PRODUCT_NAME, PRODUCT_CARD, CURRENT_PRODUCT, RECOMMENDATIONS, REVIEWS)

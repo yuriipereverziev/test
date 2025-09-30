@@ -1,0 +1,8 @@
+extends templates/layout/layout-prod.pug
+block head
+    -var title = LANG.cookie.cookie_title
+    title Naturallic - #{title}
+block content
+    include templates/mixins/menu
+    +menu("cookie")
+    include templates/cookie/main

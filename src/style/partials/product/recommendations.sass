@@ -1,0 +1,45 @@
+.recommendations
+	padding-top: 60px
+	padding-bottom: 60px
+	height: 900px
+	+r(1023)
+		padding-top: 40px
+		height: 840px
+	+r(767)
+		height: 660px
+	+r(639)
+		height: 640px
+	+r(479)
+		height: auto
+	&__title
+		margin-bottom: 50px
+		+r(639)
+			margin-bottom: 30px
+	.slick-arrow
+		top: -90px
+		&.next
+			left: 1076px
+		&.prev
+			left: 1000px
+		+r(1249)
+			&.next
+				left: 961px
+			&.prev
+				left: 910px
+		+r(1023)
+			&.next
+				left: 686px
+			&.prev
+				left: 630px
+		+r(767)
+			top: -80px
+			&.next
+				left: 580px
+			&.prev
+				left: 530px
+		+r(639)
+			top: -60px
+			&.next
+				left: 410px
+			&.prev
+				left: 360px

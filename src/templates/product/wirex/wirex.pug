@@ -1,0 +1,13 @@
+include ../../mixins/product-page
+include ../../mixins/product-review
+include ../../mixins/product-short
+
+-
+	var PRODUCT_NAME = 'Wirex men’s formula'
+	var PRODUCT_CARD = LANG.product_card;
+	var CURRENT_PRODUCT = LANG.wirex;
+	var RECOMMENDATIONS = LANG.recommendations.filter(prod => prod.name === 'Deluron Forte' || prod.name === 'Paraxan' || prod.name === 'Exofeet Oil')
+	var REVIEWS = LANG.reviews.reviews_wirex_mens_formula;
+	REVIEWS.length = 3;
+
++productPage(PRODUCT_NAME, PRODUCT_CARD, CURRENT_PRODUCT, RECOMMENDATIONS, REVIEWS)

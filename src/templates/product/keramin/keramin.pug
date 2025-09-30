@@ -1,0 +1,11 @@
+include ../../mixins/product-page
+
+-
+	var PRODUCT_NAME = 'Keramin'
+	var PRODUCT_CARD = LANG.product_card;
+	var CURRENT_PRODUCT = LANG.keramin;
+	var RECOMMENDATIONS = LANG.recommendations.filter(prod => prod.name === 'GUAVITAL+' || prod.name === 'Steplex' || prod.name === 'Paraxan')
+	var REVIEWS = LANG.reviews.reviews_keramin;
+	REVIEWS.length = 3;
+
++productPage(PRODUCT_NAME, PRODUCT_CARD, CURRENT_PRODUCT, RECOMMENDATIONS, REVIEWS)

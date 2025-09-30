@@ -1,0 +1,11 @@
+include ../../mixins/product-page
+
+-
+    var PRODUCT_NAME = 'Ophtalax'
+    var PRODUCT_CARD = LANG.product_card;
+    var CURRENT_PRODUCT = LANG.ophtalax;
+    var RECOMMENDATIONS = LANG.recommendations.filter(prod => prod.name === 'Paraxan' || prod.name === 'Steplex' || prod.name === 'Neoveris')
+    var REVIEWS = LANG.reviews.reviews_ophtalax;
+    REVIEWS.length = 3;
+
++productPage(PRODUCT_NAME, PRODUCT_CARD, CURRENT_PRODUCT, RECOMMENDATIONS, REVIEWS)

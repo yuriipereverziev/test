@@ -1,0 +1,59 @@
+mixin language-popup(page)
+    .language.language--hidden
+        .language__wrapper.container
+            .language__main
+                img.language__logo(src='img/svg/logo-w.svg' alt='')
+                p.language__desc Select the language to be displayed on the site
+                .select
+                    .select__header
+                        span.select__current Select languages
+                    .select__body
+                        .select__list
+
+                            a.select__option.select__option--default(data-lang='cz' href=url('', `/${page}.html`))
+                                img.select__flag(src='img/language-cz.png' alt='cz')
+                                span.select__country Czech
+
+                            a.select__option(data-lang='hu' href=url('hu', `/${page}.html`))
+                                img.select__flag(src='img/language-hu.png' alt='hu')
+                                span.select__country Hungarian
+
+                            a.select__option(data-lang='ro' href=url('ro', `/${page}.html`))
+                                img.select__flag(src='img/language-ro.png' alt='ro')
+                                span.select__country Romania
+
+                            a.select__option(data-lang='it' href=url('it', `/${page}.html`))
+                                img.select__flag(src='img/language-it.png' alt='it')
+                                span.select__country Italian
+
+                            a.select__option(data-lang='bg' href=url('bg', `/${page}.html`))
+                                img.select__flag(src='img/language-bg.png' alt='bg')
+                                span.select__country Bulgarian
+
+                            a.select__option(data-lang='ee' href=url('ee', `/${page}.html`))
+                                img.select__flag(src='img/language-ee.png' alt='ee')
+                                span.select__country Estonian
+
+                            a.select__option(data-lang='hr' href=url('hr', `/${page}.html`))
+                                img.select__flag(src='img/language-hr.png' alt='hr')
+                                span.select__country Croatian
+
+                            a.select__option(data-lang='lt' href=url('lt', `/${page}.html`))
+                                img.select__flag(src='img/language-lt.png' alt='lt')
+                                span.select__country Lithuanian
+
+                            a.select__option(data-lang='lv' href=url('lv', `/${page}.html`))
+                                img.select__flag(src='img/language-lv.png' alt='lv')
+                                span.select__country Latvian
+
+                            a.select__option(data-lang='pl' href=url('pl', `/${page}.html`))
+                                img.select__flag(src='img/language-pl.png' alt='pl')
+                                span.select__country Polish
+
+                            a.select__option(data-lang='pt' href=url('pt', `/${page}.html`))
+                                img.select__flag(src='img/language-pt.png' alt='pt')
+                                span.select__country Portuguese
+
+                            a.select__option(data-lang='sl' href=url('sl', `/${page}.html`))
+                                img.select__flag(src='img/language-sl.png' alt='sl')
+                                span.select__country Slovenian

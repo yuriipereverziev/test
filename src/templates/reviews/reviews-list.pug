@@ -1,0 +1,56 @@
+include ../mixins/review
+include ../data/index
+
+-
+    var REVIEWS = LANG.reviews;
+
+    let array = [
+        ...REVIEWS.reviews_beauty_age_skin,
+        ...REVIEWS.reviews_beauty_age_skin_peeling,
+        ...REVIEWS.reviews_delislim,
+        ...REVIEWS.reviews_deluron,
+        ...REVIEWS.reviews_exofeet,
+        ...REVIEWS.reviews_feronex,
+        ...REVIEWS.reviews_guavital,
+        ...REVIEWS.reviews_keramin,
+        ...REVIEWS.reviews_neoveris,
+        ...REVIEWS.reviews_ottomax,
+        ...REVIEWS.reviews_paraxan,
+        ...REVIEWS.reviews_steplex,
+        ...REVIEWS.reviews_visoptic_duo_day,
+        ...REVIEWS.reviews_visoptic_duo_night,
+        ...REVIEWS.reviews_wintex_ultra,
+        ...REVIEWS.reviews_wirex_mens_formula,
+        ...REVIEWS.reviews_ophtalax,
+        ...REVIEWS.reviews_rectin
+    ]
+
+    if (LANG.locale !== 'ee' && LANG.locale !== 'lt' && LANG.locale !== 'lv') {
+        array.push(...REVIEWS.reviews_depanten)
+    };
+
+    if (LANG.locale !== 'ee' && LANG.locale !== 'lt' && LANG.locale !== 'lv'
+       && LANG.locale !== 'pl' && LANG.locale !== 'bg' && LANG.locale !== 'it') {
+        array.push(...REVIEWS.reviews_vermixin)
+    };
+
+    const perChunk = 2;
+
+    const result = array.reduce((resultArray, item, index) => {
+        const chunkIndex = Math.floor(index / perChunk)
+
+        if (!resultArray[chunkIndex]) {
+            resultArray[chunkIndex] = []
+        }
+
+        resultArray[chunkIndex].push(item)
+
+        return resultArray
+    }, []);
+
+
+
+each reviews in result
+    .reviews-list.swiper-slide
+        each review in reviews
+            +review(review)

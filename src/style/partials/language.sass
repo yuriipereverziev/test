@@ -1,0 +1,105 @@
+.language
+  position: fixed
+  top: 0
+  right: 0
+  bottom: 0
+  left: 0
+  z-index: 1000
+  display: flex
+  justify-content: center
+  align-items: center
+  cursor: pointer
+  background: rgba(255, 255, 255, 0.8)
+  &--hidden
+    display: none
+
+  &__wrapper
+    cursor: auto
+    max-width: 529px
+    width: 100%
+
+  &__main
+    display: flex
+    flex-direction: column
+    align-items: center
+    max-width: 529px
+    width: 100%
+    background: $main-green
+    border-radius: 45px
+    padding: 40px
+    margin: 0 auto
+    +r(639)
+      padding: 30px
+
+  &__logo
+    margin-bottom: 5px
+    +r(639)
+      margin-bottom: 10px
+
+  &__desc
+    font-size: 20px
+    line-height: 32px
+    text-align: center
+    color: #fefefe
+    margin-bottom: 38px
+    +r(639)
+      font-size: 18px
+      line-height: 1.2
+      margin-bottom: 20px
+
+.select
+  color: $main-green
+  background: $light-blue
+  border-radius: 40px
+  width: 100%
+
+  &__header
+    background: #ffffff
+    border-radius: 40px
+    padding: 20px 25px
+
+  &__current
+    font-size: 22px
+
+  &__body
+    overflow: hidden
+    border-radius: 40px
+    padding: 15px
+
+  &__list
+    max-height: 30vh
+    overflow: auto
+    padding: 10px
+    scrollbar-color: #015651 #d9f5f8
+    scrollbar-width: thin
+
+    &::-webkit-scrollbar
+      width: 5px
+
+    &::-webkit-scrollbar-thumb
+      background: #015651
+      border-radius: 5px
+
+    &::-webkit-scrollbar-track
+      background: #d9f5f8
+
+  &__option
+    display: flex
+    align-items: center
+    text-decoration: none
+    color: $main-green
+    cursor: pointer
+    transition: all .3s
+
+    &:not(:last-of-type)
+      margin-bottom: 17px
+
+    &:hover
+      opacity: 0.6
+
+  &__flag
+    width: 20px
+    margin-right: 10px
+
+  &__country
+    font-size: 22px

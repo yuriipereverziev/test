@@ -1,0 +1,11 @@
+include ../../mixins/product-page
+
+-
+	var PRODUCT_NAME = 'Wintex Ultra'
+	var PRODUCT_CARD = LANG.product_card;
+	var CURRENT_PRODUCT = LANG.wintex;
+	var RECOMMENDATIONS = LANG.recommendations.filter(prod => prod.name === 'Delislim' || prod.name === 'Steplex' || prod.name === 'Keramin')
+	var REVIEWS = LANG.reviews.reviews_wintex_ultra;
+	REVIEWS.length = 3;
+
++productPage(PRODUCT_NAME, PRODUCT_CARD, CURRENT_PRODUCT, RECOMMENDATIONS, REVIEWS)

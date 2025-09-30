@@ -1,0 +1,156 @@
+.footer
+	color: $white
+	font-size: 18px
+	font-family: 'Roboto', Arial, Helvetica, sans-serif
+	padding: 0 20px 20px
+	+r(1023)
+		font-size: 16px
+		padding: 0
+	+r(639)
+		.container
+			width: 300px
+
+	&__wrapper
+		background: $main-green
+		border-radius: 40px
+		max-width: 1396px
+		width: 100%
+		margin: 0 auto
+		padding: 115px 20px
+		+r(1023)
+			border-radius: 0
+			padding: 60px 0
+		+r(639)
+			padding: 30px 0
+
+		& .container
+			max-width: 100%
+
+	a
+		color: $white
+		text-decoration: none
+		&:hover
+			text-decoration: underline
+
+	&__top
+		display: flex
+		align-items: center
+		justify-content: space-between
+		+r(1249)
+			padding-left: 0
+		+r(1023)
+			flex-direction: column
+	&__docs
+		+r(1023)
+			text-align: center
+			order: 3
+	&__logo-mob
+		display: none
+		+r(639)
+			display: block
+			width: 137px
+			margin: auto auto 20px
+
+	&__logo
+		display: block
+		margin-right: 128px
+		flex-shrink: 0
+		margin-bottom: 15px
+		+r(1249)
+			margin-right: 80px
+		+r(1023)
+			width: 150px
+			margin: 0 auto 15px
+		+r(767)
+			order: 1
+			margin-bottom: 15px
+			width: 100px
+	&__contact
+		+nlt
+			margin-bottom: 15px
+	&__catalog
+		max-width: 135px
+		width: 100%
+		margin-right: 15px
+		+r(1023)
+			max-width: 110px
+		+r(767)
+			display: none
+	&__catalog-list
+		height: 300px
+		display: flex
+		flex-direction: column
+		flex-wrap: wrap
+		+r(1023)
+			display: none
+	&__catalog-title
+		line-height: 32px
+		font-weight: 500
+		margin-bottom: 8px
+		+r(1023)
+			margin-bottom: 0
+	&__menu
+		+r(639)
+			text-align: center
+			width: 100%
+			
+	&__contacts
+		max-width: 280px
+		width: 100%
+		margin-left: 95px
+		+r(1023)
+			text-align: center
+			margin-left: 0
+			margin-bottom: 25px
+		+r(767)
+			max-width: 265px
+			order: 2
+		+r(639)
+			max-width: 100%
+			text-align: center
+	&__address
+		margin-bottom: 39px
+		line-height: 30px
+		+r(1249)
+			margin-bottom: 30px
+		+r(1023)
+			margin-bottom: 20px
+	&__contact-text
+		display: inline-block
+		margin-right: 3px
+	&__bottom
+		max-width: 295px
+		width: 100%
+		margin-left: auto
+		+r(1023)
+			margin-top: 0
+			max-width: 100%
+			text-align: center
+	&__link
+		display: block
+		+r(1023)
+			margin-bottom: 8px
+
+
+.catalog
+	&__item
+		font-weight: 300
+		margin-bottom: 3px
+		width: 194px
+
+.menu-f
+	margin-left: auto
+	+r(1023)
+		margin-left: 0
+		margin-bottom: 25px
+	&__item
+		line-height: 32px
+		font-weight: 400
+		+r(1023)
+			text-align: center
+		+nlt
+			margin-bottom: 2px
+		&--hide
+			display: none
+			+r(767)
+				display: block

@@ -1,0 +1,22 @@
+-
+	var HITS = LANG.hits;
+
+	if (LANG.locale === 'ee' || LANG.locale === 'lt' || LANG.locale === 'lv') {
+		HITS = HITS.filter(prod => prod.tag !== 'depanten')
+	}
+
+	if (LANG.locale === 'ee' || LANG.locale === 'lt' || LANG.locale === 'lv'
+		|| LANG.locale === 'pl' || LANG.locale === 'bg' || LANG.locale === 'it') {
+		HITS = HITS.filter(prod => prod.tag !== 'vermixin')
+	};
+
+
+
+include mixins/product
+
+
+.hits#js-scroll-hits.js-slider-products
+	.hits__wrapper.swiper-wrapper
+		each hit in HITS
+			+product(hit)
+	.hits__scrollbar.js-slider-hits-scrollbar.scrollbar

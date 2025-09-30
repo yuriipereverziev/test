@@ -1,0 +1,8 @@
+extends templates/layout/layout.pug
+block head
+	-var title = LANG.menu.menu_title_catalog
+	title Naturallic - #{title}
+block content
+	include templates/mixins/menu
+	+menu("catalog")
+	include templates/catalog/main

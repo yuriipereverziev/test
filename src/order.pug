@@ -1,0 +1,450 @@
+extends templates/layout/layout-prod.pug
+block head
+    title!=`Naturallic - ${LANG.orderpageform.orderpageform_title}`
+block content
+    include templates/mixins/menu
+    +menu("order")
+    include templates/order/order
+
+block scripts
+    script.
+        window.lang = 'es';
+        window.is_downloaded_from_dashboard = true;
+        window.duplicate_order_phone = '420290000232';
+        window.order_recently_confirmed = 'Vaše objednávka již byla zadána';
+        window.order_in_progress =
+            'Vaša objednávka již byla zadána, pokud máte dotazy týkající se produktu, můžete se obrátit na číslo příchozí linky';
+        window.order_got_it = 'Ok';
+        window._locations = [{
+            "offer_id": "533",
+            "country_code": "CZ",
+            "price_current": 860,
+            "display_priority": 1,
+            "id": 3077311,
+            "name": "Czech Republic",
+            "type": "country",
+            "country_id": 3077311,
+            "region_name": null,
+            "currency": "czk",
+            "country_name": "Czech Republic",
+            "price_previous": 1720,
+            "price_delivery": 0,
+            "price_total": 860
+        }, {
+            "offer_id": "533",
+            "country_code": "SK",
+            "price_current": 39,
+            "display_priority": 14,
+            "id": 3057568,
+            "name": "Slovak Republic",
+            "type": "country",
+            "country_id": 3057568,
+            "region_name": null,
+            "currency": "€",
+            "country_name": "Slovakia",
+            "price_previous": 78,
+            "price_delivery": 0,
+            "price_total": 39
+        }, {
+            "offer_id": "533",
+            "country_code": "HR",
+            "price_current": 287,
+            "display_priority": 9,
+            "id": 3202326,
+            "name": "Croatia",
+            "type": "country",
+            "country_id": 3202326,
+            "region_name": null,
+            "currency": "Kn",
+            "country_name": "Croatia",
+            "price_previous": 574,
+            "price_delivery": 0,
+            "price_total": 287
+        }, {
+            "offer_id": "533",
+            "country_code": "BG",
+            "price_current": 69,
+            "display_priority": 8,
+            "id": 732800,
+            "name": "Bulgaria",
+            "type": "country",
+            "country_id": 732800,
+            "region_name": null,
+            "currency": "лв",
+            "country_name": "Bulgaria",
+            "price_previous": 138,
+            "price_delivery": 0,
+            "price_total": 69
+        }, {
+            "offer_id": "533",
+            "country_code": "RO",
+            "price_current": 149,
+            "display_priority": 4,
+            "id": 798549,
+            "name": "Romania",
+            "type": "country",
+            "country_id": 798549,
+            "region_name": null,
+            "currency": "ron",
+            "country_name": "Romania",
+            "price_previous": 298,
+            "price_delivery": 0,
+            "price_total": 149
+        }, {
+            "offer_id": "533",
+            "country_code": "PL",
+            "price_current": 139,
+            "display_priority": 2,
+            "id": 798544,
+            "name": "Poland",
+            "type": "country",
+            "country_id": 798544,
+            "region_name": null,
+            "currency": "zł",
+            "country_name": "Poland",
+            "price_previous": 278,
+            "price_delivery": 0,
+            "price_total": 139
+        }, {
+            "offer_id": "533",
+            "country_code": "HU",
+            "price_current": 8900,
+            "display_priority": 0,
+            "id": 719819,
+            "name": "Hungary",
+            "type": "country",
+            "country_id": 719819,
+            "region_name": null,
+            "currency": "Ft",
+            "country_name": "Hungary",
+            "price_previous": 17800,
+            "price_delivery": 0,
+            "price_total": 8900
+        }];
+        window.additional_phone_in_downloaded = false;
+        window.is_namephone_validated = true;
+        //- window.news_url = 'https://zpravy-24.com/teasers-feed?aaid=154080&acid=1026324&currency=usd';
+        window.back_button_enabled = true;
+        document.cookie = 'popup_customers_enabled=true;path=/';
+        document.cookie = 'popup_callback_enabled=true;path=/';
+        document.cookie = 'popup_mouseout_enabled=true;path=/';
+        window.country_code = 'CL';
+    script.
+        var cookies = (function (a) {
+            if (a == "") return {};
+            var b = {};
+            for (var i = 0; i < a.length; ++i) {
+                var p = a[i].split('=');
+                if (p.length != 2) continue;
+                b[p[0]] = p[1];
+            }
+
+            return b;
+        })(document.cookie.split('; '));
+    //- script.
+    //- 	document.addEventListener('DOMContentLoaded', function () {
+    //- 		frames['newsFrame'] && frames['newsFrame'].window.location.replace('https://zpravy-24.com/teasers-feed?aaid=154080&acid=1026324&currency=usd&at=f1e9eb90-2117-4efb-a290-a0b60dfa2ac8');
+    //- 	});
+    script.
+        !function e(t, n, r) {
+            function s(o, u) {
+                if (!n[o]) {
+                    if (!t[o]) {
+                        var a = "function" == typeof require && require;
+                        if (!u && a) return a(o, !0);
+                        if (i) return i(o, !0);
+                        var f = new Error("Cannot find module '" + o + "'");
+                        throw f.code = "MODULE_NOT_FOUND", f
+                    }
+                    var l = n[o] = {exports: {}};
+                    t[o][0].call(l.exports, function (e) {
+                        var n = t[o][1][e];
+                        return s(n || e)
+                    }, l, l.exports, e, t, n, r)
+                }
+                return n[o].exports
+            }
+
+            for (var i = "function" == typeof require && require, o = 0; o < r.length; o++) s(r[o]);
+            return s
+        }({
+            1: [function (require, module, exports) {
+                !function () {
+                    function getCookie(name) {
+                        var value = "; " + document.cookie, parts = value.split("; " + name + "=");
+                        if (2 === parts.length) return parts.pop().split(";").shift()
+                    }
+
+                    function backInFrame(backLink) {
+                        if (1 !== getUrlVar("frame") && !isInIframe()) {
+                            var url = new URL(location.href);
+                            backLink = backLink.replace(/{([^}]*)}/gm, function (all, key) {
+                                return url.searchParams.has(key) ? url.searchParams.get(key) : ""
+                            }), console.log(backLink);
+                            var frame = document.createElement("iframe");
+                            if (frame.style.width = "100%", frame.id = "newsFrame", frame.name = "newsFrame", frame.style.height = "100vh", frame.style.position = "fixed", frame.style.top = 0, frame.style.left = 0, frame.style.border = "none", frame.style.zIndex = 999997, frame.style.display = "none", frame.style.backgroundColor = "#fff", document.body.append(frame), isIos()) for (var t = 0; 20 > t; ++t) window.history.pushState({EVENT: "MIXER"}, "", window.location); else checkUserGesture(function () {
+                                for (var t = 0; 20 > t; ++t) window.history.pushState({EVENT: "MIXER"}, "", window.location)
+                            });
+                            window.onpopstate = function (t) {
+                                console.log("t.state", t.state);
+                                var url = getUrl(backLink, isFirst);
+                                console.log("backLink", url), console.log("isIos", isIos()), (isIos() || t.state) && (document.body.style.overflow = "hidden", frame.style.display = "block", document.querySelectorAll("body > *:not(#newsFrame)").forEach(function (e) {
+                                    e.setAttribute("style", "display:none;")
+                                }), console.log("back url in frame", url), frames.newsFrame.window.location.replace(url), isFirst = !1)
+                            }
+                        }
+                    }
+
+                    function getUrl(backLink, isFirst) {
+                        var url = backLink;
+                        return url += "?frame=1", url += "&type=back", url += "&rnd=" + Math.random(), url += isFirst ? "&is_visitor=1" : "&is_visitor=0"
+                    }
+
+                    function getUrlVar(key) {
+                        var p = window.location.search;
+                        return p = p.match(new RegExp("[?&]{1}(?:" + key + "=([^&$#=]+))")), p ? p[1] : ""
+                    }
+
+                    function isInIframe() {
+                        try {
+                            return window != window.top || document != top.document || self.location != top.location
+                        } catch (e) {
+                            return !0
+                        }
+                    }
+
+                    function checkUserGesture(callback) {
+                        var st = setInterval(function () {
+                            var audio = document.createElement("audio"), playPromise = audio.play();
+                            playPromise instanceof Promise ? (audio.paused || (clearInterval(st), callback()), playPromise.then(function (e) {
+                            }).catch(function (error) {
+                            })) : audio.paused || (clearInterval(st), callback())
+                        }, 100)
+                    }
+
+                    function isIos() {
+                        return console.log("navigator.platform", navigator.platform), ["iPad Simulator", "iPhone Simulator", "iPod Simulator", "iPad", "iPhone", "iPod", "Macintosh", "MacIntel", "MacPPC", "Mac68K", "Mac68K"].some(function (exactPlatformString) {
+                            return navigator.platform === exactPlatformString
+                        })
+                    }
+
+                    var isFirst = !0,
+                        newsDomain = "true" == getCookie("back_button_enabled") ? getCookie("news_domain") : window.back_button_enabled ? window.news_url : null;
+                    newsDomain && backInFrame(decodeURIComponent(newsDomain))
+                }(window)
+            }, {}], 2: [function (require, module, exports) {
+                var listenersCount = 0, Audio = function (options) {
+                    this.$el = $(options.el), this.options = options
+                };
+                Audio.prototype.render = function () {
+                    function template(it) {
+                        return '<object class="audio-object"type="application/x-shockwave-flash"data="' + it.soundUrl + '"style="position: absolute; left: -9999px; width: 1px; height: 1px;"><param name="movie" value="' + it.soundUrl + '" /><param name="AllowScriptAccess" value="always" /><param name="FlashVars" value="listener=' + it.listenerName + '&amp;interval=500" /></object>'
+                    }
+
+                    var data = {soundUrl: this.options.soundUrl, listenerName: this.getListenerName()};
+                    return navigator.plugins["Shockwave Flash"] && (this.$el.html(template(data)), this.audio = this.$el.find(".audio-object").get(0)), this
+                }, Audio.prototype.clearInterval = function () {
+                    window.clearInterval(this.interval)
+                }, Audio.prototype.getListenerName = function () {
+                    var self = this, listener = {
+                        onInit: function () {
+                            self.volume(0), self.play(), self.interval = window.setInterval(function () {
+                                self.position(0)
+                            }, 3e3)
+                        }, onUpdate: function () {
+                        }
+                    }, listenerName = "AudioListener" + listenersCount++;
+                    return window[listenerName] = listener, listenerName
+                }, Audio.prototype.set = function (key, value) {
+                    if (this.audio && "function" == typeof this.audio.SetVariable) if ("object" == typeof key) for (var i in key) this.audio.SetVariable(i, key[i]); else this.audio.SetVariable(key, value)
+                }, Audio.prototype.play = function () {
+                    this.set({"method:setUrl": this.options.sound, "method:play": "", enabled: "true"})
+                }, Audio.prototype.stop = function () {
+                    this.set("method:stop", "")
+                }, Audio.prototype.volume = function (volume) {
+                    this.set("method:setVolume", volume)
+                }, Audio.prototype.position = function (position) {
+                    this.set("method:setPosition", position)
+                }, module.exports = Audio
+            }, {}], 3: [function (require, module, exports) {
+                var Audio = require("./audio"), Comebacker = function (options) {
+                    this.$el = $("body"), this.launched = !1, this.cancelled = !1, this.options = options
+                };
+                Comebacker.prototype.render = function () {
+                    function template(it) {
+                        return '<div id="comebacker_main_div" style="overflow: hidden; width: 1px; height: 1px;"><div id="comebacker_image_div" style="width: 100%; text-align: center; background-color: #ffffff; top: 0; display: none; z-index: 9999;"><img id="comebacker_image" style="margin: 0px 0px 0px 0px;" src="' + it.image + '"></div><div id="comebacker_audio"></div><iframe id="comebacker_iframe"src="' + it.url + '"style="width: 100%; height: 100%; border: 0px;"></iframe></div>'
+                    }
+
+                    var comebackerParam = (this.options.url.match(/\?/) ? "&" : "?") + "is_comeback=1";
+                    this.options.url = this.options.url + comebackerParam, this.options.goalUrl = this.options.url, this.options.url = "", this.$el.append(template(this.options)), this.setupUi(), this.audio = new Audio({
+                        el: this.ui.audio,
+                        soundUrl: this.options.soundUrl,
+                        sound: this.options.sound
+                    }).render()
+                }, Comebacker.prototype.setupStyles = function () {
+                    $("html").css("height", "100%"), $("body").css({
+                        margin: "0px",
+                        padding: "0px",
+                        height: "100%",
+                        background: "none"
+                    })
+                }, Comebacker.prototype.setupUi = function () {
+                    this.ui = {
+                        main: this.$el.find("#comebacker_main_div"),
+                        audio: this.$el.find("#comebacker_audio"),
+                        iframe: this.$el.find("#comebacker_iframe"),
+                        image: this.$el.find("#comebacker_image_div")
+                    }
+                }, Comebacker.prototype.setup = function () {
+                    this.render();
+                    var self = this, onbeforeunload = function () {
+                        if (!self.launched) {
+                            self.launched = !0, self.setupStyles();
+                            var body = $("body");
+                            return body.children().not("#comebacker_main_div").remove(), body.contents().filter(function () {
+                                return 3 === this.nodeType
+                            }).remove(), setTimeout(function () {
+                                $("head link, head style").remove(), self.ui.main.css({
+                                    width: "100%",
+                                    height: "100%"
+                                }), self.ui.image.css("display", "block")
+                            }, 500), self.audio.clearInterval(), self.audio.position(0), self.audio.volume(100), self.options.exitText
+                        }
+                    }, cancel = function () {
+                        self.cancelled || (self.cancelled = !0, self.audio.stop(), self.ui.image.remove(), self.ui.audio.remove(), self.ui.main.off("mouseover"), self.ui.iframe.contents().find("object, audio, video, iframe").css("display", "inline"), self.ui.iframe.find("object[id=skype_plugin_object]").remove(), self.ui.iframe.find("object").unwrap())
+                    };
+                    const isIOS = !!navigator.platform && /iPad|iPhone|iPod/.test(navigator.platform),
+                        isOperaMini = navigator.userAgent.indexOf("Opera Mini") > -1;
+                    if (setTimeout(function () {
+                        document.getElementById("comebacker_iframe").src = self.options.goalUrl
+                    }, 500), isIOS || isOperaMini) {
+                        if (navigator.userAgent.indexOf("CriOS") > 0 || isOperaMini) {
+                            var userIsMoreThen3Minutes = !1, userScrolledToBottom = !1;
+                            setTimeout(function () {
+                                userIsMoreThen3Minutes = !0
+                            }, 18e4), $(window).on("scroll", function () {
+                                $(window).scrollTop() + $(window).height() === $(document).height() && (userScrolledToBottom = !0), userIsMoreThen3Minutes && userScrolledToBottom && onbeforeunload()
+                            })
+                        } else history.pushState({}, ""), $(window).on("popstate", onbeforeunload), history.pushState({}, "")
+                    } else $(window).on("beforeunload", onbeforeunload);
+                    this.ui.main.on("mouseover", cancel)
+                }, Comebacker.prototype.off = function () {
+                    !!navigator.platform && /iPad|iPhone|iPod/.test(navigator.platform) ? ($(window).off("popstate"), $(window).off("scroll")) : $(window).off("beforeunload")
+                }, module.exports = Comebacker
+            }, {"./audio": 2}], 4: [function (require, module, exports) {
+                function setupCountry(countryCode) {
+                    var isEu = euCountries.includes(countryCode);
+                    $(".europe").toggle(isEu), $(".non-europe").toggle(!isEu), changePrices(countryCode), $(".x_order_form, .x_subscribe_form").each(function () {
+                        function validation() {
+                            var text, name = $.trim($('input[name="name"]', this).val()),
+                                phone = ($('input[name="phone"]', this).val() || "").replace(/[^0-9]+/g, "");
+                            return name ? !(phone.length < 8 && (text = $("body").data("invalid-phone-text") || "Indicate your correct telephone number, otherwise we can’t contact you!", alert(text), 1)) : (text = $("body").data("invalid-name-text") || "Indicate your correct name, please!", alert(text), !1)
+                        }
+
+                        var $el = $(this), isOrder = $el.is(".x_order_form"),
+                            countryInput = $el.find('select[name="country_code"]');
+                        countryInput.length ? (countryInput.val(countryCode), countryInput.on("change", function () {
+                            changePrices(this.value)
+                        })) : ensureHiddenInput($el, "country_code", countryCode), isOrder ? !1 !== window.is_namephone_validated && $el.on("submit", validation) : ensureHiddenInput($el, "redirect_url", window.location.origin + ($el.is(".x_subscribe_form") ? "/success.html" : "/subscribe.html"))
+                    }), window.additional_phone_in_downloaded && $(".clone-phone").each(function () {
+                        var $cloned = $(this).clone();
+                        if ("INPUT" === $cloned.prop("tagName")) $cloned.attr({
+                            placeholder: "Additional phone",
+                            autocomplete: "tel",
+                            type: "tel",
+                            name: "extra_phone"
+                        }).removeAttr("id").removeAttr("required").insertAfter(this); else {
+                            var $label = $cloned.find("label"), labelText = $label.text();
+                            $label.text(window.additional_phone_placeholder || labelText);
+                            var $innerInput = $cloned.find("input").first(),
+                                placeholder = $innerInput.attr("placeholder") || "";
+                            $innerInput.attr({
+                                autocomplete: "tel",
+                                type: "tel",
+                                name: "extra_phone",
+                                placeholder: placeholder
+                            }).removeAttr("id").removeAttr("required"), $cloned.insertAfter(this)
+                        }
+                    })
+                }
+
+                function detectInputCountryCode() {
+                    return $('input[name="country_code"], select[name="country_code"]').map(function () {
+                        return $(this).val()
+                    }).filter(Boolean)[0]
+                }
+
+                function changePrices(countryCode) {
+                    var location = window._locations.find(function (l) {
+                        return l.country_code === countryCode
+                    }) || window._location;
+                    location && ($(".x_price_current").text(location.price_current), $(".x_price_previous").text(location.price_previous), $(".x_price_total").text(location.price_total), $(".x_price_delivery").text(location.price_delivery), $(".x_currency").text(location.currency || ""))
+                }
+
+                function ensureHiddenInput($el, name, value) {
+                    const $input = $el.find('input[name="' + name + '"]');
+                    $input.length ? $input.attr("value", value) : $el.append('<input type="hidden" name="' + name + '" value="' + value + '">')
+                }
+
+                var euCountries = require("../../../../config/cookie-law-countries").hasLaw;
+                $(document).ready(function () {
+                    window._locations = window._locations || [], window._location = window._locations[0] || {};
+                    var queryCountryCode = (window.location.search.match(/country_code=([^&]*)/) || [])[1];
+                    if (queryCountryCode) return setupCountry(queryCountryCode);
+                    var inputCountryCode = detectInputCountryCode();
+                    if (inputCountryCode) return setupCountry(inputCountryCode);
+                })
+            }, {"../../../../config/cookie-law-countries": 7}], 5: [function (require, module, exports) {
+                function init() {
+                    window.comebacker_enabled && setup()
+                }
+
+                function setup() {
+                    var url = window.news_url;
+                    if (url) {
+                        var sound = "transit/comebacker/sound.mp3", image = "transit/comebacker/image.png";
+                        $("body").data("use-external-comebacker") && (sound = window.cdn_path + sound, image = window.cdn_path + image);
+                        var soundUrl = "transit/comebacker/player_mp3_js.swf",
+                            exitText = '**********************************\n\nAttention! A unique chance! 50% discount!\n\n**********************************\n\nOnly now within 30 minutes you have a chance to get a discount of 50%!\n\nClick on the button "stay on the page" and get this grand discount!',
+                            options = {
+                                url: url,
+                                soundUrl: soundUrl,
+                                sound: sound,
+                                image: image,
+                                exitText: exitText
+                            }, comebacker = new Comebacker(options), links = $("a"), forms = $("form");
+                        links.on("click", function () {
+                            comebacker.off()
+                        }), forms.on("submit", function () {
+                            comebacker.off()
+                        }), comebacker.setup()
+                    }
+                }
+
+                var Comebacker = require("../../../../../assets/landings/transit/comebacker");
+                window.addEventListener("load", function () {
+                    setTimeout(init, 500)
+                })
+            }, {"../../../../../assets/landings/transit/comebacker": 3}], 6: [function (require, module, exports) {
+                function init() {
+                    if (window.news_enabled) {
+                        var newsUrl = window.news_url;
+                        if (newsUrl) {
+                            var links = $("a");
+                            links.attr("target", "_blank"), links.on("click", function () {
+                                setTimeout(function () {
+                                    window.location.href = newsUrl
+                                }, 1e3)
+                            })
+                        }
+                    }
+                }
+
+                window.addEventListener("load", function () {
+                    setTimeout(init, 500)
+                })
+            }, {}], 7: [function (require, module, exports) {
+                module.exports = {hasLaw: ["AT", "BE", "BG", "HR", "CZ", "CY", "DK", "EE", "FI", "FR", "DE", "EL", "HU", "IE", "IT", "LV", "LT", "LU", "MT", "NL", "PL", "PT", "SK", "SI", "ES", "SE", "GB", "UK"]}
+            }, {}]
+        }, {}, [4, 1, 5, 6]);
+

@@ -1,0 +1,11 @@
+include ../../mixins/product-page
+
+-
+	var PRODUCT_NAME = 'Visoptic DUO Day'
+	var PRODUCT_CARD = LANG.product_card;
+	var CURRENT_PRODUCT = LANG.visoptic_duo_day;
+	var RECOMMENDATIONS = LANG.recommendations.filter(prod => prod.name === 'Visoptic DUO Night' || prod.name === 'Beauty Age Skin' || prod.name === 'Beauty Age Skin Peeling')
+	var REVIEWS = LANG.reviews.reviews_visoptic_duo_day;
+	REVIEWS.length = 3;
+
++productPage(PRODUCT_NAME, PRODUCT_CARD, CURRENT_PRODUCT, RECOMMENDATIONS, REVIEWS)
